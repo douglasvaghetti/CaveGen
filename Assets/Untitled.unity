@@ -86,7 +86,7 @@ GameObject:
   - 65: {fileID: 307045836}
   - 23: {fileID: 307045835}
   m_Layer: 0
-  m_Name: vazio
+  m_Name: empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ Transform:
   m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &618730479
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1235424524
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ GameObject:
   - 65: {fileID: 1235424526}
   - 23: {fileID: 1235424525}
   m_Layer: 0
-  m_Name: parede
+  m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,8 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 40
   blockSize: .25
-  vazio: {fileID: 307045834}
-  parede: {fileID: 1235424524}
+  empty: {fileID: 307045834}
+  wall: {fileID: 1235424524}
 --- !u!81 &1877284011
 AudioListener:
   m_ObjectHideFlags: 0
