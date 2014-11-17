@@ -17,12 +17,16 @@ public class createMap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.C)){
 			createRandomArray();
 			createCubes();
 		}
 
-		if(Input.GetKeyDown(KeyCode.Q)){
+		if(Input.GetKeyDown(KeyCode.D)){
+			deleteCubes();
+		}
+
+		if(Input.GetKeyDown(KeyCode.F)){
 			deleteCubes();
 			filterArray();
 			createCubes();
