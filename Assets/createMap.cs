@@ -35,10 +35,10 @@ public class createMap : MonoBehaviour {
 		cubes=new List<Object>();
 		for (int x=0; x<size; x++) {
 			for(int y=0;y<size;y++){
-				if(Random.value>0.45f){
-					array[x,y]=true;
-				}else{
+				if(Random.value<0.45f || y==0 ||x==0|| y==size-1||x==size-1 ){
 					array[x,y]=false;
+				}else{
+					array[x,y]=true;
 				}
 			}
 		}
