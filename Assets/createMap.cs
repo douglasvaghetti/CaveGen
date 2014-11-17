@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class createMap : MonoBehaviour {
 	public int size=40;
@@ -28,8 +29,16 @@ public class createMap : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.F)){
 			deleteCubes();
+			Stopwatch sw = new Stopwatch();
+			sw.Start();
 			filterArray();
+			sw.Stop();
+			UnityEngine.Debug.Log("time to filter the array: "+sw.ElapsedMilliseconds);
+			Stopwatch sw2 = new Stopwatch();
+			sw2.Start();
 			createCubes();
+			sw2.Stop();
+			UnityEngine.Debug.Log("time to create the cubes: "+sw2.ElapsedMilliseconds);
 		}
 
 	}
@@ -52,8 +61,8 @@ public class createMap : MonoBehaviour {
 		for (int x=0; x<size; x++) {
 			for(int y=0;y<size;y++){
 				if(array[x,y]){
-					cubes.Add(
-						Object.Instantiate(empty,new Vector3(x*blockSize,y*blockSize,0),Quaternion.identity));
+					//cubes.Add(
+					//	Object.Instantiate(empty,new Vector3(x*blockSize,y*blockSize,0),Quaternion.identity));
 				}else{
 					cubes.Add(
 						Object.Instantiate(wall,new Vector3(x*blockSize,y*blockSize,0),Quaternion.identity));
@@ -84,7 +93,6 @@ public class createMap : MonoBehaviour {
 		}else{
 			array[x,y]=true;
 		}
-		Debug.Log(array);
 	}
 
 	private void deleteCubes(){
