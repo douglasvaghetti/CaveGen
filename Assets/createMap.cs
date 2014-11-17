@@ -24,7 +24,7 @@ public class createMap : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Q)){
 			deleteCubes();
-			filterCubes();
+			filterArray();
 			createCubes();
 		}
 
@@ -36,9 +36,9 @@ public class createMap : MonoBehaviour {
 		for (int x=0; x<size; x++) {
 			for(int y=0;y<size;y++){
 				if(Random.value>0.45f){
-					array[x,y]=false;
-				}else{
 					array[x,y]=true;
+				}else{
+					array[x,y]=false;
 				}
 			}
 		}
@@ -47,7 +47,7 @@ public class createMap : MonoBehaviour {
 	private void createCubes(){
 		for (int x=0; x<size; x++) {
 			for(int y=0;y<size;y++){
-				if(Random.value>0.45f){
+				if(array[x,y]){
 					cubes.Add(
 						Object.Instantiate(empty,new Vector3(x*blockSize,y*blockSize,0),Quaternion.identity));
 				}else{
@@ -58,7 +58,7 @@ public class createMap : MonoBehaviour {
 		}
 	}
 
-	private void filterCubes(){
+	private void filterArray(){
 		for(int x=1;x<size-1;x++){
 			for(int y=1;y<size-1;y++){
 				filterCube(x,y);
@@ -77,8 +77,10 @@ public class createMap : MonoBehaviour {
 		}
 		if(cont>=5){
 			array[x,y]=false;
+		}else{
+			array[x,y]=true;
 		}
-		//bDebug.Log("cont = "+cont);
+		Debug.Log(array);
 	}
 
 	private void deleteCubes(){
